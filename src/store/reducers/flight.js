@@ -4,7 +4,8 @@ export const initialState = {
     business: [],
     cheap: [],
     action: null,
-    error: null
+    error: null,
+    fetching: false
 };
 
 export const flight = (state = initialState, action) => {
@@ -12,20 +13,43 @@ export const flight = (state = initialState, action) => {
         case FLIGHTS.BUSINESS_FLIGHTS + ACTIONS.FETCHING:
             return {
                 ...state,
-                action: action.type
+                action: action.type,
+                fetching: true
             };
         case FLIGHTS.BUSINESS_FLIGHTS + ACTIONS.SUCCESS:
             return {
                 ...state,
                 action: action.type,
-                business: action.data
+                business: action.data,
+                fetching: false
             };
         case FLIGHTS.BUSINESS_FLIGHTS + ACTIONS.FAILURE:
             return {
                 ...state,
                 action: action.type,
-                error: action.error
+                error: action.error,
+                fetching: false
             };
+        // case FLIGHTS.CHEAP_FLIGHTS + ACTIONS.FETCHING:
+        //     return {
+        //         ...state,
+        //         action: action.type,
+        //         fetching: true
+        //     };
+        // case FLIGHTS.CHEAP_FLIGHTS + ACTIONS.SUCCESS:
+        //     return {
+        //         ...state,
+        //         action: action.type,
+        //         cheap: action.data,
+        //         fetching: false
+        //     };
+        // case FLIGHTS.CHEAP_FLIGHTS + ACTIONS.FAILURE:
+        //     return {
+        //         ...state,
+        //         action: action.type,
+        //         error: action.error,
+        //         fetching: false
+        //     };
         default:
             return state;
     }

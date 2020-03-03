@@ -9,4 +9,9 @@ const FLIGHTS = {
     CHEAP_FLIGHTS: 'CHEAP_FLIGHTS'
 }
 
-export { ACTIONS, FLIGHTS }
+const FLIGHT_TYPES = {
+    BUSINESS: 'business',
+    CHEAP: 'cheap'
+}
+
+export { ACTIONS, FLIGHTS, FLIGHT_TYPES }

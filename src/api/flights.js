@@ -1,9 +1,9 @@
 import * as Connector from './connector'
 
-export const getBusinessFlights = async () => {
+export const getFlights = async (type) => {
     try {
 
-        const response = await Connector.get(`https://tokigames-challenge.herokuapp.com/api/flights/cheap`);
+        const response = await Connector.get(`https://tokigames-challenge.herokuapp.com/api/flights/` + type);
         if (response.status === 200) {
             const { data } = response.data;
             if (data) {

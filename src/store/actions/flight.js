@@ -14,8 +14,25 @@ const setBusinessError = error => ({
     error
 });
 
+const fetchCheapFLights = () => ({
+    type: FLIGHTS.CHEAP_FLIGHTS + ACTIONS.FETCHING
+});
+
+const setCheapFLights = flights => ({
+    type: FLIGHTS.CHEAP_FLIGHTS + ACTIONS.SUCCESS,
+    data: flights
+});
+
+const setCheapError = error => ({
+    type: FLIGHTS.CHEAP_FLIGHTS + ACTIONS.FAILURE,
+    error
+});
+
 export {
     fetchBusinessFLights,
     setBusinessFLights,
-    setBusinessError
+    setBusinessError,
+    fetchCheapFLights,
+    setCheapFLights,
+    setCheapError
 }
