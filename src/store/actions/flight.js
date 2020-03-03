@@ -9,7 +9,7 @@ const setBusinessFLights = flights => ({
     data: flights
 });
 
-const setError = error => ({
+const setBusinessError = error => ({
     type: FLIGHTS.BUSINESS_FLIGHTS + ACTIONS.FAILURE,
     error
 });
@@ -17,5 +17,5 @@ const setError = error => ({
 export {
     fetchBusinessFLights,
     setBusinessFLights,
-    setError
+    setBusinessError
 }
