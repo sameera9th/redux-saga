@@ -1,4 +1,4 @@
-import {ACTIONS, FLIGHTS} from '../types/flight';
+import { ACTIONS, FLIGHTS } from '../types/flight';
 
 export const initialState = {
     business: [],
@@ -7,10 +7,8 @@ export const initialState = {
     error: null
 };
 
-export const flights = (state = initialState, action) =>
-{
-    switch(action.type)
-    {
+export const flight = (state = initialState, action) => {
+    switch (action.type) {
         case FLIGHTS.BUSINESS_FLIGHTS + ACTIONS.FETCHING:
             return {
                 ...state,
@@ -28,5 +26,7 @@ export const flights = (state = initialState, action) =>
                 action: action.type,
                 error: action.error
             };
+        default:
+            return state;
     }
 }

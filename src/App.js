@@ -1,8 +1,11 @@
 import React from 'react';
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
+import { fetchBusinessFLights } from './store/actions/flight';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
@@ -18,9 +21,23 @@ function App() {
         >
           Learn React
         </a>
+        <button type="button" onClick={props.fetchBusinessFLights}>Fetch Business Flights</button>
       </header>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = ({
+  flight
+}) => ({
+  flight: flight,
+});
+
+const mapDispatchToProps = disptach => ({
+  fetchBusinessFLights: () => disptach(fetchBusinessFLights()),
+});
+
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App));

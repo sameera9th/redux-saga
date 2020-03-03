@@ -3,18 +3,12 @@ import {combineReducers} from 'redux'
 import * as flightReducer from './reducers/flight'
 
 const appReducer = combineReducers({
-    flight: flightReducer.flights
+    flight: flightReducer.flight
 })
 
 const rootReducer = (state, action) =>
 {
-    if(action.type === 'LOGOUT')
-    {
-        state = {
-            flight: flightReducer.initialState,
-        }
-    }
-
+    console.log('state ', state);
     return appReducer(state, action)
 }
 

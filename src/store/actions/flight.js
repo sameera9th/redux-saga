@@ -1,4 +1,4 @@
-import {ACTIONS, FLIGHTS} from '../types/flights';
+import { ACTIONS, FLIGHTS } from '../types/flight';
 
 const fetchBusinessFLights = () => ({
     type: FLIGHTS.BUSINESS_FLIGHTS + ACTIONS.FETCHING

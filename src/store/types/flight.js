@@ -1,7 +1,7 @@
 const ACTIONS = {
-    FETCHING: 'FETCHING',
-    SUCCESS: 'SUCCESS',
-    FAILURE: 'FAILURE'
+    FETCHING: '_FETCHING',
+    SUCCESS: '_SUCCESS',
+    FAILURE: '_FAILURE'
 }
 
 const FLIGHTS = {
